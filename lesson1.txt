@@ -1,0 +1,552 @@
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/
+/c/Users/nuxxxcake/Desktop/тест/
+/c/Users/nuxxxcake/Desktop/тест/папка1
+/c/Users/nuxxxcake/Desktop/тест/папка1/текст2.txt
+/c/Users/nuxxxcake/Desktop/тест/папка1/текст3.txt
+/c/Users/nuxxxcake/Desktop/тест/папка1/текст4.txt
+/c/Users/nuxxxcake/Desktop/тест/папка1/текстсозданный_кат.txt
+/c/Users/nuxxxcake/Desktop/тест/папка2
+/c/Users/nuxxxcake/Desktop/тест/папка2/папка2.1
+/c/Users/nuxxxcake/Desktop/тест/папка2/папка2.1/текст5.txt
+/c/Users/nuxxxcake/Desktop/тест/папка2/папка2.2
+/c/Users/nuxxxcake/Desktop/тест/папка2/папка2.2/папка2.2.1
+/c/Users/nuxxxcake/Desktop/тест/папка2/папка2.2/папка2.2.1/текст8.txt
+/c/Users/nuxxxcake/Desktop/тест/папка2/папка2.2/текст7.txt
+/c/Users/nuxxxcake/Desktop/тест/папка3
+/c/Users/nuxxxcake/Desktop/тест/папка3/ворд1.docx
+/c/Users/nuxxxcake/Desktop/тест/папка3/картинка1.jpg
+/c/Users/nuxxxcake/Desktop/тест/папка3/поверпоинт1.pptx
+/c/Users/nuxxxcake/Desktop/тест/папка3/текст6.txt
+/c/Users/nuxxxcake/Desktop/тест/папкасозданная_мкдир
+/c/Users/nuxxxcake/Desktop/тест/папкасозданная_мкдир_из_другой_дирректории
+/c/Users/nuxxxcake/Desktop/тест/текст1.txt
+/c/Users/nuxxxcake/Desktop/тест/файлсозданный_кат
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/ -iname файл
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/** -iname файл
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/** -iname файл*
+/c/Users/nuxxxcake/Desktop/тест/файлсозданный_кат
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/** -iname файл* | rm
+rm: missing operand
+Try 'rm --help' for more information.
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/** -iname файл*
+/c/Users/nuxxxcake/Desktop/тест/файлсозданный_кат
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/** -iname файл* | echo $1
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/** -iname файл* | echo $?
+0
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/** -iname файл* | echo $0
+/usr/bin/bash
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/** -iname файл*
+/c/Users/nuxxxcake/Desktop/тест/файлсозданный_кат
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/** -iname файл* | $0
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/** -iname файл* | cd
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/** -iname файл* | cd $0
+bash: cd: /usr/bin/bash: No such file or directory
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/** -iname файл* && cd $0
+/c/Users/nuxxxcake/Desktop/тест/файлсозданный_кат
+bash: cd: /usr/bin/bash: No such file or directory
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
+$ find ~/Desktop/тест/** -iname файл* && cd
+/c/Users/nuxxxcake/Desktop/тест/файлсозданный_кат
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~
+$ find ~/Desktop/тест/** -iname файл* && cd $1
+/c/Users/nuxxxcake/Desktop/тест/файлсозданный_кат
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~
+$ cd ${find ~/Desktop/тест/** -iname файл*}
+bash: ${find ~/Desktop/тест/** -iname файл*}: bad substitution
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~
+$ cd $(find ~/Desktop/тест/** -iname файл*)
+bash: cd: /c/Users/nuxxxcake/Desktop/тест/файлсозданный_кат: Not a directory
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~
+$ rm $(find ~/Desktop/тест/** -iname файл*)
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~
+$
+
+
+
+**Начало**
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~
+$ cd Desktop/тест
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест
+$ pwd
+/c/Users/nuxxxcake/Desktop/тест
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест
+$ cd папка2
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2
+$ cd ..
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест
+$ cd -
+/c/Users/nuxxxcake/Desktop/тест/папка2
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2
+$ mkdir п1 п2 п3
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2
+$ ls
+п1/  п2/  п3/  папка2.1/  папка2.2/
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2
+$ cd п2
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ echo "тут я что то написала" > echo_text.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ cat echo_text.txt
+тут я что то написала
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ cat > cat_text.txt
+и тут написала что то
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ cat cat_text.txt
+и тут написала что то
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ cat >> cat_text.txt
+ и добавила чуть чуть
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ cat cat_text.txt
+и тут написала что то и добавила чуть чуть
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ touch touch_without_text.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ cat > touch_without_text.txt
+написала что то, что бы не был пустой
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ cat touch_without_text.txt
+написала что то, что бы не был пустой
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ ls ~/Desktop/тест
+папка1/  папка3/                папкасозданная_мкдир_из_другой_дирректории/
+папка2/  папкасозданная_мкдир/  текст1.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ ls -l ~/Desktop/тест
+total 13
+drwxr-xr-x 1 nuxxxcake 197121  0 Feb 12 17:59 папка1/
+drwxr-xr-x 1 nuxxxcake 197121  0 Feb 12 19:00 папка2/
+drwxr-xr-x 1 nuxxxcake 197121  0 Feb 11 16:09 папка3/
+drwxr-xr-x 1 nuxxxcake 197121  0 Feb 12 10:15 папкасозданная_мкдир/
+drwxr-xr-x 1 nuxxxcake 197121  0 Feb 12 11:39 папкасозданная_мкдир_из_другой_дирректории/
+-rw-r--r-- 1 nuxxxcake 197121 56 Feb 11 15:58 текст1.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ ls -al ~/Desktop/тест
+total 37
+drwxr-xr-x 1 nuxxxcake 197121  0 Feb 12 18:21 ./
+drwxr-xr-x 1 nuxxxcake 197121  0 Feb 12 18:26 ../
+drwxr-xr-x 1 nuxxxcake 197121  0 Feb 12 17:59 папка1/
+drwxr-xr-x 1 nuxxxcake 197121  0 Feb 12 19:00 папка2/
+drwxr-xr-x 1 nuxxxcake 197121  0 Feb 11 16:09 папка3/
+drwxr-xr-x 1 nuxxxcake 197121  0 Feb 12 10:15 папкасозданная_мкдир/
+drwxr-xr-x 1 nuxxxcake 197121  0 Feb 12 11:39 папкасозданная_мкдир_из_другой_дирректории/
+-rw-r--r-- 1 nuxxxcake 197121 56 Feb 11 15:58 текст1.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ ls -R ~/Desktop/тест
+/c/Users/nuxxxcake/Desktop/тест:
+папка1/  папка3/                папкасозданная_мкдир_из_другой_дирректории/
+папка2/  папкасозданная_мкдир/  текст1.txt
+
+/c/Users/nuxxxcake/Desktop/тест/папка1:
+текст2.txt  текст3.txt  текст4.txt  текстсозданный_кат.txt
+
+/c/Users/nuxxxcake/Desktop/тест/папка2:
+п1/  п2/  п3/  папка2.1/  папка2.2/
+
+/c/Users/nuxxxcake/Desktop/тест/папка2/п1:
+
+/c/Users/nuxxxcake/Desktop/тест/папка2/п2:
+cat_text.txt  echo_text.txt  touch_without_text.txt
+
+/c/Users/nuxxxcake/Desktop/тест/папка2/п3:
+
+/c/Users/nuxxxcake/Desktop/тест/папка2/папка2.1:
+текст5.txt
+
+/c/Users/nuxxxcake/Desktop/тест/папка2/папка2.2:
+папка2.2.1/  текст7.txt
+
+/c/Users/nuxxxcake/Desktop/тест/папка2/папка2.2/папка2.2.1:
+текст8.txt
+
+/c/Users/nuxxxcake/Desktop/тест/папка3:
+ворд1.docx  картинка1.jpg  поверпоинт1.pptx  текст6.txt
+
+/c/Users/nuxxxcake/Desktop/тест/папкасозданная_мкдир:
+
+/c/Users/nuxxxcake/Desktop/тест/папкасозданная_мкдир_из_другой_дирректории:
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ mv touch_without_text.txt ~/Desktop/тест/папка2/п1 && mv echo_text.txt ~/Desktop/тест/папка2/п1
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ cp ~/Desktop/тест/папка2/п1/echo_text.txt ~/Desktop/тест/папка2/п3 && cp ~/Desktop/тест/папка2/п1/touch_without_text.txt ~/Desktop/тест/папка2/п3
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ cp cat_text.txt cat_text2.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ find ~/Desktop/тест -name "*.txt"
+/c/Users/nuxxxcake/Desktop/тест/папка1/текст2.txt
+/c/Users/nuxxxcake/Desktop/тест/папка1/текст3.txt
+/c/Users/nuxxxcake/Desktop/тест/папка1/текст4.txt
+/c/Users/nuxxxcake/Desktop/тест/папка1/текстсозданный_кат.txt
+/c/Users/nuxxxcake/Desktop/тест/папка2/п1/echo_text.txt
+/c/Users/nuxxxcake/Desktop/тест/папка2/п1/touch_without_text.txt
+/c/Users/nuxxxcake/Desktop/тест/папка2/п2/cat_text.txt
+/c/Users/nuxxxcake/Desktop/тест/папка2/п2/cat_text2.txt
+/c/Users/nuxxxcake/Desktop/тест/папка2/п3/echo_text.txt
+/c/Users/nuxxxcake/Desktop/тест/папка2/п3/touch_without_text.txt
+/c/Users/nuxxxcake/Desktop/тест/папка2/папка2.1/текст5.txt
+/c/Users/nuxxxcake/Desktop/тест/папка2/папка2.2/папка2.2.1/текст8.txt
+/c/Users/nuxxxcake/Desktop/тест/папка2/папка2.2/текст7.txt
+/c/Users/nuxxxcake/Desktop/тест/папка3/текст6.txt
+/c/Users/nuxxxcake/Desktop/тест/текст1.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ find ~/Desktop/тест -name "папка3"
+/c/Users/nuxxxcake/Desktop/тест/папка3
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ find ~/Desktop/тест -name "текст5.txt"
+/c/Users/nuxxxcake/Desktop/тест/папка2/папка2.1/текст5.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ head /текст5.txt
+head: cannot open '/текст5.txt' for reading: No such file or directory
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ head ~/Desktop/тест/папка2/папка2.1/текст5.txt
+Быть распиздяем, но умным распиздяем?
+Или, быть тупым, но ответственным тупым?
+В горле ком, быть уродом, но с тяжёлым кулаком?
+Или самым симпатичным слабаком?
+Прощать людей и постоянно сожалеть об этом
+Или, обиды не тая, посылать на хуй?
+Разбогатеть, ходя на рынок со своим пакетом
+Или, голодая, поделиться последней рубахой?
+Это настольная игра, Монополия
+В ней чередуются добро и насилие
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ tail ~/Desktop/тест/папка2/папка2.1/текст5.txt
+Это настольная игра, Монополия
+Бросаем кубики, напрасны усилия
+Мы выбираем цвет фигуры и не более того
+Это настольная игра, Монополия
+В ней чередуются добро и насилие
+"А не говно ли я? А не говно ли я?"
+Почаще спрашивай себя самого
+Это настольная игра, Монополия
+Бросаем кубики, напрасны усилия
+Мы выбираем цвет фигуры и не более того
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ head -2 ~/Desktop/тест/папка2/папка2.1/текст5.txt
+Быть распиздяем, но умным распиздяем?
+Или, быть тупым, но ответственным тупым?
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ tail -2 ~/Desktop/тест/папка2/папка2.1/текст5.txt
+Бросаем кубики, напрасны усилия
+Мы выбираем цвет фигуры и не более того
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ less ~/Desktop/тест/папка2/папка2.1/текст5.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ less -X ~/Desktop/тест/папка2/папка2.1/текст5.txt
+Быть распиздяем, но умным распиздяем?
+Или, быть тупым, но ответственным тупым?
+В горле ком, быть уродом, но с тяжёлым кулаком?
+Или самым симпатичным слабаком?
+Прощать людей и постоянно сожалеть об этом
+Или, обиды не тая, посылать на хуй?
+Разбогатеть, ходя на рынок со своим пакетом
+Или, голодая, поделиться последней рубахой?
+Это настольная игра, Монополия
+В ней чередуются добро и насилие
+"А не говно ли я? А не говно ли я?"
+Почаще спрашивай себя самого
+Это настольная игра, Монополия
+Бросаем кубики, напрасны усилия
+Мы выбираем цвет фигуры и не более того
+Влюбиться по уши, но вдруг возненавидеть
+Или быть одиноким только чтобы не страдать ни о ком?
+Жить в уюте и тепле, но под замком
+Или обойти планету с рюкзаком?
+Произносить, во благо вроде бы, грязную ложь
+Или быть честным, даже если от правды вред?
+Сначала я скажу ребёнку: "Вырастешь, поймёшь"
+Потом подумаю: "Прости, на самом деле нет"
+Это настольная игра, Монополия
+В ней чередуются добро и насилие
+"А не говно ли я? А не говно ли я?"
+Почаще спрашивай себя самого
+Это настольная игра, Монополия
+Бросаем кубики, напрасны усилия
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ less -XN ~/Desktop/тест/папка2/папка2.1/текст5.txt
+      1 Быть распиздяем, но умным распиздяем?
+      2 Или, быть тупым, но ответственным тупым?
+      3 В горле ком, быть уродом, но с тяжёлым кулаком?
+      4 Или самым симпатичным слабаком?
+      5 Прощать людей и постоянно сожалеть об этом
+      6 Или, обиды не тая, посылать на хуй?
+      7 Разбогатеть, ходя на рынок со своим пакетом
+      8 Или, голодая, поделиться последней рубахой?
+      9 Это настольная игра, Монополия
+     10 В ней чередуются добро и насилие
+     11 "А не говно ли я? А не говно ли я?"
+     12 Почаще спрашивай себя самого
+     13 Это настольная игра, Монополия
+     14 Бросаем кубики, напрасны усилия
+     15 Мы выбираем цвет фигуры и не более того
+     16 Влюбиться по уши, но вдруг возненавидеть
+     17 Или быть одиноким только чтобы не страдать ни о ком?
+     18 Жить в уюте и тепле, но под замком
+     19 Или обойти планету с рюкзаком?
+     20 Произносить, во благо вроде бы, грязную ложь
+     21 Или быть честным, даже если от правды вред?
+     22 Сначала я скажу ребёнку: "Вырастешь, поймёшь"
+     23 Потом подумаю: "Прости, на самом деле нет"
+     24 Это настольная игра, Монополия
+     25 В ней чередуются добро и насилие
+     26 "А не говно ли я? А не говно ли я?"
+     27 Почаще спрашивай себя самого
+     28 Это настольная игра, Монополия
+     29 Бросаем кубики, напрасны усилия
+     30 Мы выбираем цвет фигуры и не более того
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/п2
+$ cd .. && cd ..
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест
+$ grep -i монополия ~/Desktop/тест/папка2/папка2.1/текст5.txt
+Это настольная игра, Монополия
+Это настольная игра, Монополия
+Это настольная игра, Монополия
+Это настольная игра, Монополия
+Это настольная игра, Монополия
+Это настольная игра, Монополия
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест
+$ grep -iv монополия ~/Desktop/тест/папка2/папка2.1/текст5.txt
+Быть распиздяем, но умным распиздяем?
+Или, быть тупым, но ответственным тупым?
+В горле ком, быть уродом, но с тяжёлым кулаком?
+Или самым симпатичным слабаком?
+Прощать людей и постоянно сожалеть об этом
+Или, обиды не тая, посылать на хуй?
+Разбогатеть, ходя на рынок со своим пакетом
+Или, голодая, поделиться последней рубахой?
+В ней чередуются добро и насилие
+"А не говно ли я? А не говно ли я?"
+Почаще спрашивай себя самого
+Бросаем кубики, напрасны усилия
+Мы выбираем цвет фигуры и не более того
+Влюбиться по уши, но вдруг возненавидеть
+Или быть одиноким только чтобы не страдать ни о ком?
+Жить в уюте и тепле, но под замком
+Или обойти планету с рюкзаком?
+Произносить, во благо вроде бы, грязную ложь
+Или быть честным, даже если от правды вред?
+Сначала я скажу ребёнку: "Вырастешь, поймёшь"
+Потом подумаю: "Прости, на самом деле нет"
+В ней чередуются добро и насилие
+"А не говно ли я? А не говно ли я?"
+Почаще спрашивай себя самого
+Бросаем кубики, напрасны усилия
+Мы выбираем цвет фигуры и не более того
+В ней чередуются добро и насилие
+"А не говно ли я? А не говно ли я?"
+Почаще спрашивай себя самого
+Бросаем кубики, напрасны усилия
+Мы выбираем цвет фигуры и не более того
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест
+$ grep -in монополия ~/Desktop/тест/папка2/папка2.1/текст5.txt
+9:Это настольная игра, Монополия
+13:Это настольная игра, Монополия
+24:Это настольная игра, Монополия
+28:Это настольная игра, Монополия
+31:Это настольная игра, Монополия
+35:Это настольная игра, Монополия
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест
+$ grep -i "добро и насилие" ~/Desktop/тест/папка2/папка2.1/текст5.txt
+В ней чередуются добро и насилие
+В ней чередуются добро и насилие
+В ней чередуются добро и насилие
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест
+$ grep -in "добро и насилие" ~/Desktop/тест/папка2/папка2.1/текст5.txt
+10:В ней чередуются добро и насилие
+25:В ней чередуются добро и насилие
+32:В ней чередуются добро и насилие
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест
+$ cd ~/Desktop/тест/папка2/папка2.1
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/папка2.1
+$ tail -f текст5.txt
+Это настольная игра, Монополия
+Бросаем кубики, напрасны усилия
+Мы выбираем цвет фигуры и не более того
+Это настольная игра, Монополия
+В ней чередуются добро и насилие
+"А не говно ли я? А не говно ли я?"
+Почаще спрашивай себя самого
+Это настольная игра, Монополия
+Бросаем кубики, напрасны усилия
+Мы выбираем цвет фигуры и не более того
+1
+2
+3
+
+4
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/папка2.1
+$ tail -f текст5.txt | grep -i абаб
+абаб
+абаб
+абаб
+абаб
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/папка2.1
+$ tail -10 текст5.txt
+4
+
+абаб
+абаб
+аба
+аба
+абаб
+аба
+абаб
+абаб
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/папка2.1
+$ date
+Tue Feb 14 14:40:11 RTZ 2023
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/папка2.1
+$ date +%c
+Tue Feb 14 14:41:10 2023
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/папка2.1
+$ date +"%A %d %B"
+Tuesday 14 February
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/папка2.1
+$ date +"Сегодня: %A %d %B"
+Сегодня: Tuesday 14 February
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/папка2.1
+$ touch touch_without.json
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/папка2.1
+$ ls
+touch_without.json  текст5.txt
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/папка2.1
+$ cat > cat.json
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/папка2.1
+$ ls
+cat.json  touch_without.json  текст5.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/папка2.1
+$ vim текст5.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка2/папка2.1
+$ cat текст5.txt
+Быть распиздяем, но умным распиздяем?
+Или, быть тупым, но ответственным тупым?
+В горле ком, быть уродом, но с тяжёлым кулаком?
+Или самым симпатичным слабаком?
+Прощать людей и постоянно сожалеть об этом
+Или, обиды не тая, посылать на хуй?
+Разбогатеть, ходя на рынок со своим пакетом
+Или, голодая, поделиться последней рубахой?
+Это настольная игра, Монополия
+В ней чередуются добро и насилие
+"А не говно ли я? А не говно ли я?"
+Почаще спрашивай себя самого
+Это настольная игра, Монополия
+Бросаем кубики, напрасны усилия
+Мы выбираем цвет фигуры и не более того
+Влюбиться по уши, но вдруг возненавидеть
+Или быть одиноким только чтобы не страдать ни о ком?
+Жить в уюте и тепле, но под замком
+Или обойти планету с рюкзаком?
+Произносить, во благо вроде бы, грязную ложь
+Или быть честным, даже если от правды вред?
+Сначала я скажу ребёнку: "Вырастешь, поймёшь"
+Потом подумаю: "Прости, на самом деле нет"
+Это настольная игра, Монополия
+В ней чередуются добро и насилие
+"А не говно ли я? А не говно ли я?"
+Почаще спрашивай себя самого
+Это настольная игра, Монополия
+Бросаем кубики, напрасны усилия
+Мы выбираем цвет фигуры и не более того
+Это настольная игра, Монополия
+В ней чередуются добро и насилие
+"А не говно ли я? А не говно ли я?"
+Почаще спрашивай себя самого
+Это настольная игра, Монополия
+Бросаем кубики, напрасны усилия
+Мы выбираем цвет фигуры и не более того
+
