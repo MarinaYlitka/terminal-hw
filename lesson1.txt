@@ -45,61 +45,6 @@ $ find ~/Desktop/тест/** -iname файл*
 nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
 $ find ~/Desktop/тест/** -iname файл* | echo $1
 
-
-nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
-$ find ~/Desktop/тест/** -iname файл* | echo $?
-0
-
-nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
-$ find ~/Desktop/тест/** -iname файл* | echo $0
-/usr/bin/bash
-
-nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
-$ find ~/Desktop/тест/** -iname файл*
-/c/Users/nuxxxcake/Desktop/тест/файлсозданный_кат
-
-nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
-$ find ~/Desktop/тест/** -iname файл* | $0
-
-nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
-$ find ~/Desktop/тест/** -iname файл* | cd
-
-nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
-$ find ~/Desktop/тест/** -iname файл* | cd $0
-bash: cd: /usr/bin/bash: No such file or directory
-
-nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
-$ find ~/Desktop/тест/** -iname файл* && cd $0
-/c/Users/nuxxxcake/Desktop/тест/файлсозданный_кат
-bash: cd: /usr/bin/bash: No such file or directory
-
-nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/тест/папка1
-$ find ~/Desktop/тест/** -iname файл* && cd
-/c/Users/nuxxxcake/Desktop/тест/файлсозданный_кат
-
-nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~
-$ find ~/Desktop/тест/** -iname файл* && cd $1
-/c/Users/nuxxxcake/Desktop/тест/файлсозданный_кат
-
-nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~
-$ cd ${find ~/Desktop/тест/** -iname файл*}
-bash: ${find ~/Desktop/тест/** -iname файл*}: bad substitution
-
-nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~
-$ cd $(find ~/Desktop/тест/** -iname файл*)
-bash: cd: /c/Users/nuxxxcake/Desktop/тест/файлсозданный_кат: Not a directory
-
-nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~
-$ rm $(find ~/Desktop/тест/** -iname файл*)
-
-nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~
-$
-
-
-
-**Начало**
-
-
 nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~
 $ cd Desktop/тест
 
