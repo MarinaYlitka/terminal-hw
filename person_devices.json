@@ -1,0 +1,11 @@
+{
+	"person_name": "Anton",
+	"person_age": "32",
+	"person_devaces": {
+				"device_1": "Iphone 12",
+				"device_2": "Samsung A52",
+				"device_3": "Ipad3"
+	}	
+
+
+}
