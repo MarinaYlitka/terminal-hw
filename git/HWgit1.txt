@@ -1,0 +1,260 @@
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub
+$ mkdir JSON
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub
+$ cd JSON
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON
+$ git init
+git branch -M main
+git remote add origin https://github.com/MarinaYlitka/JSON.git
+Initialized empty Git repository in C:/Users/nuxxxcake/Desktop/hw/GitHub/JSON/.git/
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ ls -la
+total 4
+drwxr-xr-x 1 nuxxxcake 197121 0 Mar 20 12:42 ./
+drwxr-xr-x 1 nuxxxcake 197121 0 Mar 20 12:39 ../
+drwxr-xr-x 1 nuxxxcake 197121 0 Mar 20 12:42 .git/
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ echo "# JSON" >> README.md
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ git add README.md
+git commit -m "first commit"
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory
+[main (root-commit) f7f8b59] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 224 bytes | 224.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MarinaYlitka/JSON.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ cat > new.json
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ git add .
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ git commit -am
+error: switch `m' requires a value
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ git commit -am "add"
+[main 631137f] add
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new.json
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 274 bytes | 274.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MarinaYlitka/JSON.git
+   f7f8b59..631137f  main -> main
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ vim new.json
+
+[1]+  Stopped                 vim new.json
+      0 [sig] bash 1006! sigpacket::process: Suppressing signal 18 to win32 process (pid 10420)
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ vim new.json
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ vim new.json
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ git add new.json
+warning: LF will be replaced by CRLF in new.json.
+The file will have its original line endings in your working directory
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ git commit -am 'add information'
+[main ce0dc0e] add information
+ 1 file changed, 13 insertions(+)
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 383 bytes | 383.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MarinaYlitka/JSON.git
+   631137f..ce0dc0e  main -> main
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ cat > preferences.json
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ vim preferences.json
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ cat > skills.json
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ vim skills.json
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ git add preferences.json skills.json
+warning: LF will be replaced by CRLF in preferences.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in skills.json.
+The file will have its original line endings in your working directory
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ git commit -am "2 jsons"
+[main b25be63] 2 jsons
+ 2 files changed, 21 insertions(+)
+ create mode 100644 preferences.json
+ create mode 100644 skills.json
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 596 bytes | 596.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MarinaYlitka/JSON.git
+   ce0dc0e..b25be63  main -> main
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ git pull
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 9 (delta 4), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (9/9), 2.10 KiB | 45.00 KiB/s, done.
+From https://github.com/MarinaYlitka/JSON
+   b25be63..eda69fc  main       -> origin/main
+Updating b25be63..eda69fc
+Fast-forward
+ bug_report.json | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+ create mode 100644 bug_report.json
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/JSON (main)
+$ cd ..
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub
+$ mkdir XML
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub
+$ cd XML/
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/XML
+$ git init
+git branch -M main
+git remote add origin https://github.com/MarinaYlitka/XML.git
+Initialized empty Git repository in C:/Users/nuxxxcake/Desktop/hw/GitHub/XML/.git/
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/XML (main)
+$ ls -la
+total 4
+drwxr-xr-x 1 nuxxxcake 197121 0 Mar 20 12:42 ./
+drwxr-xr-x 1 nuxxxcake 197121 0 Mar 20 12:39 ../
+drwxr-xr-x 1 nuxxxcake 197121 0 Mar 20 12:42 .git/
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/XML (main)
+$ echo "# XML" >> README.md
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/XML (main)
+$ git add README.md
+git commit -m "first commit"
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory
+[main (root-commit) f7f8b59] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/XML (main)
+$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 224 bytes | 224.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MarinaYlitka/XML.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/XML (main)
+$ code .
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/XML (main)
+$ git commit -am new.xml
+[main b5fbfc8] new.xml
+ 1 file changed, 8 insertions(+)
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/XML (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 428 bytes | 428.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MarinaYlitka/XML.git
+   be8d56f..b5fbfc8  main -> main
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/XML (main)
+$ touch preferences.xml
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/XML (main)
+$ touch skills.xml
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/XML (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        preferences.xml
+        skills.xml
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/XML (main)
+$ git add . && git commit -m "add 2 xml"
+[main d1589e1] add 2 xml
+ 2 files changed, 56 insertions(+)
+ create mode 100644 preferences.xml
+ create mode 100644 skills.xml
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/XML (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 777 bytes | 777.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MarinaYlitka/XML.git
+   b5fbfc8..d1589e1  main -> main
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/hw/GitHub/XML (main)
+$ git pull
+Updating d1589e1..dc36882
+Fast-forward
+ bug_report.xml | 52 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 52 insertions(+)
+ create mode 100644 bug_report.xml
