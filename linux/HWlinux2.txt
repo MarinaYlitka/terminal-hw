@@ -1,0 +1,259 @@
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2
+$ mkdir dir_1
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2
+$ cd dir_1/
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ mkdir inner_dir_1
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ pwd
+/c/Users/nuxxxcake/Desktop/HW2/dir_1
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ touch tf_1.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ cat >tf_2.txt
+the first 1
+the second 2
+the third 3
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ cd inner_dir_1
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1/inner_dir_1
+$ cat >tf_3.txt
+random sting 1
+rendom string 2
+random sting 3
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1/inner_dir_1
+$ cat >>tf_3.txt
+the second 2
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1/inner_dir_1
+$ cat >>tf_3.txt
+the sec 2
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1/inner_dir_1
+$ cat >>~/Desktop/HW2/dir_1/tf_2.txt
+the sec 3
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1/inner_dir_1
+$ cat >>tf_3.txt
+the SeCoNd 2
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1/inner_dir_1
+$ cat >>~/Desktop/HW2/dir_1/tf_2.txt
+the seConD 2
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1/inner_dir_1
+$ cat -b >>tf_4.txt
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1/inner_dir_1
+$ cat -n >>tf_5.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1/inner_dir_1
+$ ls -la
+total 3
+drwxr-xr-x 1 nuxxxcake 197121   0 Mar 29 15:40 ./
+drwxr-xr-x 1 nuxxxcake 197121   0 Mar 28 15:44 ../
+-rw-r--r-- 1 nuxxxcake 197121  82 Mar 29 15:29 tf_3.txt
+-rw-r--r-- 1 nuxxxcake 197121 138 Mar 29 15:40 tf_4.txt
+-rw-r--r-- 1 nuxxxcake 197121 104 Mar 29 15:41 tf_5.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1/inner_dir_1
+$ cd ..
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ cat ~/Desktop/HW2/dir_1/inner_dir_1/tf_3.txt
+random sting 1
+rendom string 2
+random sting 3
+the second 2
+the sec 2
+the SeCoNd 2
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ find -name tf_4.txt
+./inner_dir_1/tf_4.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ > ./inner_dir_1/tf_4.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ find -type f -name '*tf*'
+./inner_dir_1/tf_3.txt
+./inner_dir_1/tf_4.txt
+./inner_dir_1/tf_5.txt
+./tf_1.txt
+./tf_2.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ find -type f -iname '*tf*'
+./inner_dir_1/tf_3.txt
+./inner_dir_1/tf_4.txt
+./inner_dir_1/tf_5.txt
+./tf_1.txt
+./tf_2.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep 'sec' ./*
+grep: ./inner_dir_1: Is a directory
+./tf_2.txt:the second 2
+./tf_2.txt:the sec 3
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep -i 'sec' ./*
+grep: ./inner_dir_1: Is a directory
+./tf_2.txt:the second 2
+./tf_2.txt:the sec 3
+./tf_2.txt:the seConD 2
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep -w 'sec' ./*
+grep: ./inner_dir_1: Is a directory
+./tf_2.txt:the sec 3
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep -wi 'sec' ./*
+grep: ./inner_dir_1: Is a directory
+./tf_2.txt:the sec 3
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep 'second' ./*
+grep: ./inner_dir_1: Is a directory
+./tf_2.txt:the second 2
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep -i 'second' ./*
+grep: ./inner_dir_1: Is a directory
+./tf_2.txt:the second 2
+./tf_2.txt:the seConD 2
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep  'second' ./**/*
+./inner_dir_1/tf_3.txt:the second 2
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep --files-with-matches --no-messages 'second' ./*
+./tf_2.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep -rv 'second' ./*
+./inner_dir_1/tf_3.txt:random sting 1
+./inner_dir_1/tf_3.txt:rendom string 2
+./inner_dir_1/tf_3.txt:random sting 3
+./inner_dir_1/tf_3.txt:the sec 2
+./inner_dir_1/tf_3.txt:the SeCoNd 2
+./inner_dir_1/tf_5.txt:     1
+./inner_dir_1/tf_5.txt:     2
+./inner_dir_1/tf_5.txt:     3
+./inner_dir_1/tf_5.txt:     4
+./inner_dir_1/tf_5.txt:     5
+./inner_dir_1/tf_5.txt:     6
+./inner_dir_1/tf_5.txt:     7
+./inner_dir_1/tf_5.txt:     8
+./inner_dir_1/tf_5.txt:     9
+./inner_dir_1/tf_5.txt:    10
+./inner_dir_1/tf_5.txt:    11
+./inner_dir_1/tf_5.txt:    12
+./inner_dir_1/tf_5.txt:    13
+./tf_2.txt:the first 1
+./tf_2.txt:the third 3
+./tf_2.txt:the sec 3
+./tf_2.txt:the seConD 2
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep -rv --files-with-matches 'second' ./*
+./inner_dir_1/tf_3.txt
+./inner_dir_1/tf_5.txt
+./tf_2.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ tail -n 4 ./inner_dir_1/tf_5.txt
+    10
+    11
+    12
+    13
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ head -n 4 ./inner_dir_1/tf_5.txt
+     1
+     2
+     3
+     4
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ mkdir ex35 && cat >> ex35/ex35.txt
+a
+b
+c
+d
+
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep -rlw 'sec' | xargs  mv -t ./ex35
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep -rlw 'sec' | xargs  cp -t ./inner_dir_1
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep -r -h 'sec' . | xargs -0 echo > mix.txt
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ cat mix.txt
+the second 2
+the sec 3
+the second 2
+the sec 2
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep -rlw 'sec' | xargs rm
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ grep -rlw 'sec'
+
+nuxxxcake@DESKTOP-UBTIO8S MINGW64 ~/Desktop/HW2/dir_1
+$ echo 'God job!!'
+God job!!
+
